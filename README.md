@@ -1,1 +1,3 @@
-# slf_eduacation
+# self_eduacation
+
+Project for self-eduacation tasks
