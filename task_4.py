@@ -79,6 +79,15 @@ def task_33(n):
     return str(sum(map(int, str(n))))
 
 
+def get_result_string(func, key: str, value: list) -> str:
+    result = f'{key}\n' \
+             f'Входные данные: {value}\n' \
+             f'Результат: {func(*input_data[key])}\n'
+    print(result)
+    return result
+
+
+# Парсим данные из файла input.txt
 input_data: dict[str, list[int]] = {}
 with open('input.txt', 'r', encoding='utf-8') as file:
     for line in file.readlines():
@@ -92,62 +101,32 @@ with open('output.txt', 'w', encoding='utf-8') as file:
     for key, value in input_data.items():
         match key:
             case 'Задача 1.1':
-                s = f'{key}\n' \
-                    f'Входные данные: {value}\n' \
-                    f'Результат: {task_11(*input_data[key])}\n'
-                print(s)
+                s = get_result_string(task_11, key, value)
                 file.write(s + '\n')
             case 'Задача 1.2':
-                s = f'{key}\n' \
-                    f'Входные данные: {value}\n' \
-                    f'Результат: {task_12(*input_data[key])}\n'
-                print(s)
+                s = get_result_string(task_12, key, value)
                 file.write(s + '\n')
             case 'Задача 1.3':
-                s = f'{key}\n' \
-                    f'Входные данные: {value}\n' \
-                    f'Результат: {task_13(*input_data[key])}\n\n'
-                print(s)
+                s = get_result_string(task_13, key, value)
                 file.write(s)
             case 'Задача 1.4':
-                s = f'{key}\n' \
-                    f'Входные данные: {value}\n' \
-                    f'Результат: {task_14(*input_data[key])}\n'
-                print(s)
+                s = get_result_string(task_14, key, value)
                 file.write(s + '\n')
             case 'Задача 2.1':
-                s = f'{key}\n' \
-                    f'Входные данные: {value}\n' \
-                    f'Результат: {task_21(*input_data[key])}\n'
-                print(s)
+                s = get_result_string(task_21, key, value)
                 file.write(s + '\n')
             case 'Задача 2.2':
-                s = f'{key}\n' \
-                    f'Входные данные: {value}\n' \
-                    f'Результат: {task_22(*input_data[key])}\n'
-                print(s)
+                s = get_result_string(task_22, key, value)
                 file.write(s + '\n')
             case 'Задача 2.3':
-                s = f'{key}\n' \
-                    f'Входные данные: {value}\n' \
-                    f'Результат: {task_23(*input_data[key])}\n'
-                print(s)
+                s = get_result_string(task_23, key, value)
                 file.write(s + '\n')
             case 'Задача 3.1':
-                s = f'{key}\n' \
-                    f'Входные данные: {value}\n' \
-                    f'Результат: {task_31(*input_data[key])}\n'
-                print(s)
+                s = get_result_string(task_31, key, value)
                 file.write(s + '\n')
             case 'Задача 3.2':
-                s = f'{key}\n' \
-                    f'Входные данные: {value}\n' \
-                    f'Результат: {task_32(*input_data[key])}\n'
-                print(s)
+                s = get_result_string(task_32, key, value)
                 file.write(s + '\n')
             case 'Задача 3.3':
-                s = f'{key}\n' \
-                    f'Входные данные: {value}\n' \
-                    f'Результат: {task_33(*input_data[key])}\n'
-                print(s)
+                s = get_result_string(task_33, key, value)
                 file.write(s + '\n')
