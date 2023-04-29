@@ -99,7 +99,7 @@ def get_result_string(func, key: str, value: list) -> str:
     """
     result = f'{key}\n' \
              f'Входные данные: {value}\n' \
-             f'Результат: {func(*input_data[key])}\n'
+             f'Результат: {func(*value)}\n'
     print(result)
     return result
 
