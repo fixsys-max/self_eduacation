@@ -19,7 +19,7 @@ def task_12(t: int) -> str:
 def task_13(n: int) -> str:
     """Функция для решения задачи 1.3"""
     s = '\n'
-    for i in range(n + 1):
+    for i in range(n):
         s += f'{i + 1}. 000\n'
     return s
 
@@ -98,10 +98,10 @@ def get_result_string(func, key: str, value: list) -> str:
     :return: результирующая строка
     """
     result = f'{key}\n' \
-             f'Входные данные: {value}\n' \
+             f'Входные данные: {", ".join(map(str, value))}\n' \
              f'Результат: {func(*value)}\n'
     print(result)
-    return result
+    return result + '\n'
 
 
 # Парсим данные из файла input.txt
@@ -119,32 +119,22 @@ with open('output.txt', 'w', encoding='utf-8') as file:
     for key, value in input_data.items():
         match key:
             case 'Задача 1.1':
-                s = get_result_string(task_11, key, value)
-                file.write(s + '\n')
+                file.write(get_result_string(task_11, key, value))
             case 'Задача 1.2':
-                s = get_result_string(task_12, key, value)
-                file.write(s + '\n')
+                file.write(get_result_string(task_12, key, value))
             case 'Задача 1.3':
-                s = get_result_string(task_13, key, value)
-                file.write(s)
+                file.write(get_result_string(task_13, key, value))
             case 'Задача 1.4':
-                s = get_result_string(task_14, key, value)
-                file.write(s + '\n')
+                file.write(get_result_string(task_14, key, value))
             case 'Задача 2.1':
-                s = get_result_string(task_21, key, value)
-                file.write(s + '\n')
+                file.write(get_result_string(task_21, key, value))
             case 'Задача 2.2':
-                s = get_result_string(task_22, key, value)
-                file.write(s + '\n')
+                file.write(get_result_string(task_22, key, value))
             case 'Задача 2.3':
-                s = get_result_string(task_23, key, value)
-                file.write(s + '\n')
+                file.write(get_result_string(task_23, key, value))
             case 'Задача 3.1':
-                s = get_result_string(task_31, key, value)
-                file.write(s + '\n')
+                file.write(get_result_string(task_31, key, value))
             case 'Задача 3.2':
-                s = get_result_string(task_32, key, value)
-                file.write(s + '\n')
+                file.write(get_result_string(task_32, key, value))
             case 'Задача 3.3':
-                s = get_result_string(task_33, key, value)
-                file.write(s + '\n')
+                file.write(get_result_string(task_33, key, value))
