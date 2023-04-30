@@ -1,0 +1,16 @@
+Here are some suggestions to improve the code:
+
+1. Use more descriptive function and variable names. Names like `task_11` or `cnt` are not very informative and can make the code harder to read and understand.
+
+2. Use type hints consistently throughout the code to improve readability and maintainability.
+
+3. Use f-strings for string formatting throughout the code to make the code cleaner and more readable.
+
+4. Remove unnecessary comments or add more useful ones to help explain what the code is doing.
+
+5. Consider using `join()` instead of string concatenation when building up strings to improve performance.
+
+6. Use a `for` loop instead of a `while` loop in `task_12` to make the code cleaner and easier to read.
+
+7. Simplify `task_31` by using the modulo operator `%` to calculate the remainder of the division.
+
