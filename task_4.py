@@ -118,18 +118,17 @@ def get_result_string(func, key: str, value: list) -> str:
     return result + '\n'
 
 
-# Парсим данные из файла input.txt
-input_data: dict[str, list[int]] = {}
-with open('input.txt', 'r', encoding='utf-8') as file:
-    for line in file.readlines():
-        if line.startswith('Задача'):
-            key = line.strip()
-            input_data[key] = []
-        else:
-            input_data[key].append(int(line.strip()))
-
-
 if __name__ == '__main__':
+    # Парсим данные из файла input.txt
+    input_data: dict[str, list[int]] = {}
+    with open('input.txt', 'r', encoding='utf-8') as file:
+        for line in file.readlines():
+            if line.startswith('Задача'):
+                key = line.strip()
+                input_data[key] = []
+            else:
+                input_data[key].append(int(line.strip()))
+
     # Расчет и вывод и сохранение результата
     with open('output.txt', 'w', encoding='utf-8') as file:
         for key, value in input_data.items():
